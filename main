@@ -71,3 +71,6 @@ class ConTrader(tpqoa.tpqoa):
     def report_trade(self, order, going):  # NEW
 
         
+trader = ConTrader("oanda.cfg", "EUR_USD", "1min", window = 1, units = 100000)
+trader.get_most_recent()
+trader.stream_data(trader.instrument, stop = 100)
